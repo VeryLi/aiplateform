@@ -1,0 +1,42 @@
+# 服务配置
+server:
+  port: 18080
+logging:
+  config: D:\WorkSpace\dispatcher\src\main\resources\logback.xml
+
+# Mybatis配置
+mybatis:
+  typeAliasesPackage: com.ai.dispatcher.repository.mysql.model
+  mapperLocations: classpath:com/ai/dispatcher/repository/mysql/mapping/*.xml
+
+# Spring配置
+spring:
+
+  # 数据库链接配置
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/dispatcher?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+  # MongoDB数据库配置
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: dispatcher
+
+  # Redis配置
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        max-wait: 1000ms
+      shutdown-timeout: 100ms
+
