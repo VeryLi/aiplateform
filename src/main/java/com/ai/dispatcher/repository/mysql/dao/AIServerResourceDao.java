@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 
+
 @Slf4j
 @Service
 public class AIServerResourceDao {
@@ -14,4 +15,5 @@ public class AIServerResourceDao {
     public AIServerResourceDao(AIServerResourceMapper aiServerResourceMapper) {
         this.aiServerResourceMapper = aiServerResourceMapper;
     }
+
 }
