@@ -14,3 +14,4 @@ public class ChannelAnalysisInfoDao {
         this.channelAnalysisInfoMapper = channelAnalysisInfoMapper;
     }
 }
+
