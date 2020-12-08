@@ -6,7 +6,7 @@
 
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%d{HH:mm:ss.SSS} %class [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <pattern>[%d{HH:mm:ss.SSS}][%thread][%class][%-5level][TraceId-%X{traceId}] - %msg%n</pattern>
         </encoder>
     </appender>
 
@@ -16,7 +16,7 @@
             <fileNamePattern>${log.path}/logback.%d{yyyy-MM-dd}.log</fileNamePattern>
         </rollingPolicy>
         <encoder>
-            <pattern>%d{HH:mm:ss.SSS} %class [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <pattern>[%d{HH:mm:ss.SSS}][%thread][%class][%-5level][TraceId-%X{traceId}] - %msg%n</pattern>
         </encoder>
     </appender>
 

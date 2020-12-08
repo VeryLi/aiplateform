@@ -1,12 +1,14 @@
 # 服务配置
 server:
   port: 18080
+  servlet:
+    context-path: /v1/scheduling
 logging:
-  config: D:\WorkSpace\dispatcher\src\main\resources\logback.xml
+  config: classpath:logback.xml
 
 # Mybatis配置
 mybatis:
-  typeAliasesPackage: com.ai.dispatcher.repository.mysql.model
+  typeAliasesPackage: com.ai.schedule.repository.mysql.model
   mapperLocations: classpath:mapper/*.xml
   configuration:
     map-underscore-to-camel-case: true
@@ -18,7 +20,7 @@ spring:
   datasource:
     username: root
     password: 123456
-    url: jdbc:mysql://localhost:3306/dispatcher?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
+    url: jdbc:mysql://localhost:3306/schedule?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
 
@@ -42,3 +44,11 @@ spring:
         max-wait: 1000ms
       shutdown-timeout: 100ms
 
+# 调度服务配置
+scheduling:
+  thread-pools:
+    - name: "default"
+      prefix-name: "scheduling-"
+      core: 10
+      max: 10
+      queue: 10
